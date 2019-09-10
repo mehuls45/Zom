@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-2">
+        <div class="sticky-top">
+            <div class="list-group">
+
+                <button 
+                (click)="setItem('')" [class.active] = "filterTerm == null || filterTerm == '' "
+                class="list-group-item list-group-item-action">All Categories</button>
+
+                <button (click) = setItem(rt) [class.active] = "rt == filterTerm"
+                *ngFor="let rt of restroType" 
+                class="list-group-item list-group-item-action">{{ rt }}</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        <div class="container">
+            <p>
+                <input [(ngModel)]="filterTerm" class="form-control search-box" type="text" placeholder="Search...">
+            </p>
+
+            <div class="row">
+                <div class="col-md-4" *ngFor="let r of restro | filter: filterTerm">
+                    <app-restro-card
+
+                    (send)=navigate($event)
+
+                    [id] = r.id
+                    [img] = r.img
+                    [name]="r.name"
+                    [location]="r.location"
+                    [type]="r.type"
+                    ></app-restro-card>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+        <div *ngFor="let r of restro">
+          <div class="row" *ngIf="r.id == id">
+            <div class="col-md-4">
+              <img class="card-img-top img-fluid" src="../../assets/img/{{ r.img }}" alt="">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">{{ r.name }}</h3>
+                <h4>{{ r.type }}</h4>
+                <p class="card-text">{{ r.location }}</p>
+                <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                4.0 stars
+              </div>
+              <div class="card card-outline-secondary my-4">
+                <div class="card-header">
+                  Product Reviews
+                </div> 
+                <div class="card-body">
+                  <p>Very Good Restraunt. Awesome Food</p>
+                  <small class="text-muted">Posted by Anonymous on 3/1/19</small>
+                  <hr>
+                  <a href="#" class="btn btn-success">Leave a Review</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
